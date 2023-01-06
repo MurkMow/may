@@ -1,12 +1,14 @@
 ﻿  Source.c
-C:\Users\egori\Desktop\учеба\Курс прога\murk\курсовая\Source.c(80,21): warning C4020: print1: слишком много фактических параметров
-C:\Users\egori\Desktop\учеба\Курс прога\murk\курсовая\Source.c(130,26): warning C4020: print1: слишком много фактических параметров
-C:\Users\egori\Desktop\учеба\Курс прога\murk\курсовая\Source.c(146,20): warning C4020: print1: слишком много фактических параметров
-C:\Users\egori\Desktop\учеба\Курс прога\murk\курсовая\Source.c(47,7): warning C4101: name4: неиспользованная локальная переменная
-C:\Users\egori\Desktop\учеба\Курс прога\murk\курсовая\Source.c(84,8): warning C4101: xa: неиспользованная локальная переменная
-C:\Users\egori\Desktop\учеба\Курс прога\murk\курсовая\Source.c(221,8): warning C4244: функция: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\egori\Desktop\учеба\Курс прога\murk\курсовая\Source.c(246,19): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\egori\Desktop\учеба\Курс прога\murk\курсовая\Source.c(224,13): warning C4101: k2: неиспользованная локальная переменная
-C:\Users\egori\Desktop\учеба\Курс прога\murk\курсовая\Source.c(223,28): warning C4101: num: неиспользованная локальная переменная
-C:\Users\egori\Desktop\учеба\Курс прога\murk\курсовая\Source.c(277,56): warning C4029: объявленный список формальных параметров отличается от объявления
-  курсовая.vcxproj -> C:\Users\egori\Desktop\учеба\Курс прога\murk\x64\Debug\курсовая.exe
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(80,21): warning C4020: print1: слишком много фактических параметров
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(130,26): warning C4020: print1: слишком много фактических параметров
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(146,20): warning C4020: print1: слишком много фактических параметров
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(47,7): warning C4101: name4: неиспользованная локальная переменная
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(84,8): warning C4101: xa: неиспользованная локальная переменная
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(221,8): warning C4244: функция: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(246,19): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(252,37): warning C4305: =: усечение из "int" в "char"
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(253,37): warning C4305: =: усечение из "int" в "char"
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(224,13): warning C4101: k2: неиспользованная локальная переменная
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(223,28): warning C4101: num: неиспользованная локальная переменная
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(277,56): warning C4029: объявленный список формальных параметров отличается от объявления
+  курсовая.vcxproj -> C:\Users\egori\Documents\GitHub\may\x64\Debug\курсовая.exe
