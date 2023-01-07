@@ -20,8 +20,8 @@ typedef struct Team {
 	char winlose[6];
 } Tm;
 //Описание функций, используемых в программе
-void a(struct Team* pA, int i, int j);
-void sortall(struct Team* pA, int N, int up, int base, void(*fun)(struct Team*, int, int));
+int compare(struct Team* pA, int i, int j, int base);
+void sort(struct Team* pA, int N, int b, int(*fun)(struct Team*, int, int, int));
 int read(struct Team* pA, char name[]);
 void randauto(struct Team* pA, int N);
 int search(struct Team* pA, int i, char name4[20]);
@@ -52,7 +52,7 @@ int main()
 	Tm* com = commande;
 	int count = 0;
 	//Реализация меню програмы
-	while (flag==0){
+	while (flag == 0) {
 		int m = 0;
 		printf("Выберите пункт из меню \n");
 		printf("1. Чтение данных из файла\n");
@@ -77,7 +77,7 @@ int main()
 			break;
 		}
 		case 2: {
-			print1(com, N, 0,0,0);
+			print1(com, N, 0, 0, 0);
 			break;
 		}
 		case 3: {
@@ -93,10 +93,9 @@ int main()
 				printf("-->");
 				scanf_s("%d", &xa1);
 				if (xa1 == 1) {
-					//sort(com, N,1);
-					sortall(com, N, 1, 1, a);
+					sort(com, N, 1, compare);
 				}
-				if (xa1 == 2) sortall(com, N, 0, 1, a);
+				if (xa1 == 2) sort(com, N, 2, compare);
 				if (xa1 > 2) printf("Введено некорректное значение.\n");
 				printf("Данные успешно отсортированы\n");
 
@@ -110,9 +109,9 @@ int main()
 				printf("2. По убыванию \n");
 				printf("-->");
 				if (xa2 == 1) {
-					sortall(com, N, 0, 2, a);
+					sort(com, N, 4, compare);
 				}
-				if (xa2 == 2) sortall(com, N, 1, 2, a);
+				if (xa2 == 2) sort(com, N, 3, compare);
 				if (xa2 > 2) printf("Введено некорректное значение.\n");
 				printf("Данные успешно отсортированы\n");
 			}
@@ -125,11 +124,11 @@ int main()
 			printf("Введите название команды: \n");
 			fflush(stdin);
 			scanf("%s", &name4);
-			l = search(com, N, name4)-1;
-			if (l >=-1) {
-				print1(com, l + 1, l,0,0);
+			l = search(com, N, name4) - 1;
+			if (l >= -1) {
+				print1(com, l + 1, l, 0, 0);
 			}
-			if (l<-1) printf("Команда не найдена, повторите поиск \n\n");
+			if (l < -1) printf("Команда не найдена, повторите поиск \n\n");
 			break;
 		}
 		case 5: {
@@ -143,7 +142,7 @@ int main()
 			int o = 0;
 			printf("Введите число:\n");
 			scanf("%d", &count2);
-			print1(com, N,0,1,count2);
+			print1(com, N, 0, 1, count2);
 			break;
 		}
 		case 7: {
@@ -180,20 +179,24 @@ int main()
 		}
 	}
 }
-void a(struct Team* pA, int i, int j) {
-	struct Team commande1;
-	commande1 = pA[j];
-	pA[j] = pA[j + 1];
-	pA[j + 1] = commande1;
+int compare(struct Team* pA, int i, int j, int base)
+{
+	if (base == 1) return pA[i].point - pA[j].point;
+	if (base == 2) return pA[j].point - pA[i].point;
+	if (base == 3) return strcmp(pA[i].cape, pA[j].cape);
+	if (base == 3) return strcmp(pA[j].cape, pA[i].cape);
 }
-void sortall(struct Team* pA, int N, int up, int base, void(*fun)(struct Team*,int, int)) {
+void sort(struct Team* pA, int N, int b, int(*fun)(struct Team*, int, int, int)) {
 	for (int i = N - 1; i; i--)
 		for (int j = 0; j < i; j++) {
-			if (base == 1) {
-				if (up && pA[j].point > pA[j + 1].point || !up && pA[j].point < pA[j + 1].point) fun(pA,i,j);
-			}
-			if (base == 2) {
-				if (up && strcmp(pA[j].cape, pA[j + 1].cape) > 0 || !up && (strcmp(pA[j].cape, pA[j + 1].cape) < 0)) fun(pA, i, j);
+			//int a = compare(pA, i, j,4);
+			int a = fun(pA, i, j, b);
+			if (a < 0)
+			{
+				struct Team q;
+				q = pA[j];
+				pA[j] = pA[i];
+				pA[i] = q;
 			}
 		}
 }
@@ -257,7 +260,7 @@ void randauto(struct Team* pA, int N) {
 }
 //Функция поиска команды по названию
 int search(struct Team* pA, int N, char name4[20]) {
-	int k3 = 0,a=-1;
+	int k3 = 0, a = -1;
 	for (int j = 0; j < N; j++) {
 		k3++;
 		if (strcmp(name4, pA[j].cape) == 0) {
@@ -274,7 +277,7 @@ int point(struct Team* pA, int i) {
 	return (p);
 }
 //Функция печати
-void print1(struct Team* pA, int N, int j,int a,int z) {
+void print1(struct Team* pA, int N, int j, int a, int z) {
 	printf("-----------------------------------------------------------------------------------\n");
 	printf("|%3s|%14s|%10s|%6s|%6s|%6s|%6s|%6s|%13s|\n", "№", "Имя команды", "Игр всего", "Побед", "Поражений", "Бонусы", "Очки", "NNR", "Текущая серия");
 	printf("-----------------------------------------------------------------------------------");
