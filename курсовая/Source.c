@@ -184,7 +184,7 @@ int compare(struct Team* pA, int i, int j, int base)
 	if (base == 1) return pA[i].point - pA[j].point;
 	if (base == 2) return pA[j].point - pA[i].point;
 	if (base == 3) return strcmp(pA[i].cape, pA[j].cape);
-	if (base == 3) return strcmp(pA[j].cape, pA[i].cape);
+	if (base == 4) return strcmp(pA[j].cape, pA[i].cape);
 }
 void sort(struct Team* pA, int N, int b, int(*fun)(struct Team*, int, int, int)) {
 	for (int i = N - 1; i; i--)
@@ -193,8 +193,7 @@ void sort(struct Team* pA, int N, int b, int(*fun)(struct Team*, int, int, int))
 			int a = fun(pA, i, j, b);
 			if (a < 0)
 			{
-				struct Team q;
-				q = pA[j];
+				struct Team q = pA[j];
 				pA[j] = pA[i];
 				pA[i] = q;
 			}

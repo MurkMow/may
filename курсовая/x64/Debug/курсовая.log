@@ -4,12 +4,12 @@ C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(129,27): warning C
 C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(145,22): warning C4020: print1: слишком много фактических параметров
 C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(47,7): warning C4101: name4: неиспользованная локальная переменная
 C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(84,8): warning C4101: xa: неиспользованная локальная переменная
-C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(224,8): warning C4244: функция: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(249,19): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(223,8): warning C4244: функция: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(248,19): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(254,37): warning C4305: =: усечение из "int" в "char"
 C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(255,37): warning C4305: =: усечение из "int" в "char"
-C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(256,37): warning C4305: =: усечение из "int" в "char"
-C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(227,13): warning C4101: k2: неиспользованная локальная переменная
-C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(226,28): warning C4101: num: неиспользованная локальная переменная
-C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(280,58): warning C4029: объявленный список формальных параметров отличается от объявления
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(226,13): warning C4101: k2: неиспользованная локальная переменная
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(225,28): warning C4101: num: неиспользованная локальная переменная
+C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(279,58): warning C4029: объявленный список формальных параметров отличается от объявления
 C:\Users\egori\Documents\GitHub\may\курсовая\Source.c(188): warning C4715: compare: значение возвращается не при всех путях выполнения
   курсовая.vcxproj -> C:\Users\egori\Documents\GitHub\may\x64\Debug\курсовая.exe
